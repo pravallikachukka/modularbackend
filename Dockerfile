@@ -4,7 +4,7 @@ FROM golang:1.17-alpine
 WORKDIR /app
 
 # Download Go modules
-COPY go.mod go.sum ./
+COPY go.mod ./
 RUN go mod download
 
 # Copy the source code. Note the slash at the end, as explained in
@@ -12,7 +12,7 @@ RUN go mod download
 COPY *.go ./
 
 # Build the Go application
-RUN CGO_ENABLED=0 GOOS=linux go build -o /modularproject/src
+RUN go build -o /modularproject/src
 
 # Expose the port that your Go application listens on
 EXPOSE 8080
