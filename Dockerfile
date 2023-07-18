@@ -7,7 +7,7 @@ WORKDIR /app
 COPY . .
 
 # Fetch and download the Go modules (dependencies)
-RUN go mod download
+RUN go mod tidy && go mod vendor
 
 # Build the Go application
 RUN go build -o /modularproject/src
