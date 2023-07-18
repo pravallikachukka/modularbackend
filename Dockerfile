@@ -3,13 +3,11 @@ FROM golang:1.17-alpine
 
 WORKDIR /app
 
-# Download Go modules
-COPY go.mod ./
-RUN go mod download
+# Copy the Go application source code into the container
+COPY . .
 
-# Copy the source code. Note the slash at the end, as explained in
-# https://docs.docker.com/engine/reference/builder/#copy
-COPY *.go ./
+# Fetch and download the Go modules (dependencies)
+RUN go mod download
 
 # Build the Go application
 RUN go build -o /modularproject/src
