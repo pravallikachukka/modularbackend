@@ -4,7 +4,7 @@ FROM golang:1.19
 WORKDIR /app
 
 #COPY go.mod go.sum ./
-RUN go mod tidy
+RUN go mod init
 
 # Copy the Go application source code into the container
 COPY src/ .
