@@ -3,6 +3,9 @@ FROM golang:1.17-alpine
 
 WORKDIR /app
 
+COPY go.mod go.sum ./
+RUN go mod download
+
 # Copy the Go application source code into the container
 COPY src/ .
 
