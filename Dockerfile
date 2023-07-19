@@ -1,5 +1,5 @@
 # Use the official Go image as the base image
-FROM golang:1.13
+FROM golang:1.19
 
 WORKDIR /app
 
