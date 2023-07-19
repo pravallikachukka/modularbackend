@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Download Go modules
 #COPY go.mod go.sum ./
-RUN go mod download
+RUN go mod tidy && go mod vendor
 
 # Copy the Go application source code into the container
 COPY src/ .
