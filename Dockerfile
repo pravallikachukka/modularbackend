@@ -1,10 +1,10 @@
 # Use the official Go image as the base image
-FROM golang:1.19
+FROM golang:1.13
 
 WORKDIR /app
 
 # Download Go modules
-COPY go.mod go.sum ./
+#COPY go.mod go.sum ./
 RUN go mod download
 
 # Copy the Go application source code into the container
