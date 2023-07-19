@@ -3,8 +3,8 @@ FROM golang:1.19
 
 WORKDIR /app
 
-COPY go.mod go.sum ./
-RUN go mod download
+#COPY go.mod go.sum ./
+RUN go mod tidy
 
 # Copy the Go application source code into the container
 COPY src/ .
