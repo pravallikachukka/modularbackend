@@ -1,5 +1,5 @@
 # Use the official Go image as the base image
-FROM golang:1.17-alpine
+FROM golang:1.18-alpine
 RUN apk --no-cache add ca-certificates git
 
 WORKDIR /app
