@@ -4,16 +4,14 @@ FROM golang:1.17-alpine
 WORKDIR /app
 
 # Copy the Go application source code into the container
-COPY . .
-
-# Fetch and download the Go modules (dependencies)
-RUN go mod tidy && go mod vendor
+COPY src/ .
 
 # Build the Go application
-RUN go build -o /modularproject/src
+#RUN go build -o /modularproject/src
+RUN go build -o modularproject
 
 # Expose the port that your Go application listens on
 EXPOSE 8080
 
 # Set the entry point for the container to run your Go application
-CMD ["./modularproject/src"]
+CMD ["./modularproject"]
